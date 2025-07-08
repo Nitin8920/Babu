@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snap Moments 💕</title>
+  <style>
+    html, body {
+      height: 100%;
+      min-height: 100vh;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffb6c1, #ffe4e1, #fff0f5);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      color: #fff;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 3rem;
+      text-shadow: 2px 2px 8px #ff69b4;
+    }
+
+    .video-container {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+      margin-bottom: 60px;
+    }
+
+    .video-card {
+      border: 4px dashed #ff69b4;
+      border-radius: 20px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 15px #ff69b4;
+      transition: 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: scale(1.05);
+    }
+
+    video {
+      width: 250px;
+      height: 150px;
+      border-radius: 15px;
+    }
+
+    .heart {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatHearts 10s linear infinite;
+      z-index: 0;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart:before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        bottom: -50px;
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 100%;
+        left: calc(100vw * 0.5);
+        opacity: 0;
+      }
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #ff69b4;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ff1493;
+      z-index: 999;
+    }
+
+    .back-btn:hover {
+      background: #ff1493;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="love.html" class="back-btn">← Go Back</a>
+  <h1>My Lovely Snaps 💖</h1>
+
+  <div class="video-container">
+    <div class="video-card"><video src="assest/snap1.mp4" controls></video></div>
+    <div class="video-card"><video src="assest/snap2.mp4" controls></video></div>
+    <div class="video-card"><video src="assest/snap3.mp4" controls></video></div>
+    <div class="video-card"><video src="assest/snap4.mp4" controls></video></div>
+    <div class="video-card"><video src="assest/snap5.mp4" controls></video></div>
+    <div class="video-card"><video src="assest/snap6.mp4" controls></video></div>
+    <div class="video-card"><video src="assest/snap7.mp4" controls></video></div>
+    <div class="video-card"><video src="assest/snap8.mp4" controls></video></div>
+    <div class="video-card"><video src="assest/snap9.mp4" controls></video></div>
+    <div class="video-card"><video src="assest/snap10.mp4" controls></video></div>
+  </div>
+
+  <!-- Floating Hearts Animation Script -->
+  <script>
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+      heart.style.opacity = Math.random();
+      heart.style.background = ['#ff4d6d', '#ff6699', '#ff1a75'][Math.floor(Math.random() * 3)];
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>

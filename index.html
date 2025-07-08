@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love for Her ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffb6c1, #ffe4e1, #fff0f5);
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      text-align: center;
+      padding-top: 80px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ff1493;
+      text-shadow: 2px 2px 10px #fff;
+    }
+
+    .shayari {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #d6006b;
+      font-style: italic;
+      text-shadow: 1px 1px 5px #fff0f5;
+      line-height: 1.8;
+    }
+
+    .circle-images {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ff69b4;
+      box-shadow: 0 0 15px #ff69b4;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .circle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #ff1493;
+    }
+
+    .love-btn {
+      margin-top: 40px;
+      padding: 15px 40px;
+      font-size: 1.5rem;
+      background: #ff1493;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #ff69b4;
+      transition: background 0.3s ease;
+    }
+
+    .love-btn:hover {
+      background: #ff69b4;
+      box-shadow: 0 0 25px #ff1493;
+    }
+
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatHearts 10s linear infinite;
+      opacity: 0.7;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart:before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        bottom: -50px;
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 100vh;
+        left: calc(100vw * 0.5);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .circle {
+        width: 90px;
+        height: 90px;
+      }
+
+      .love-btn {
+        font-size: 1.2rem;
+        padding: 12px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>My Love Gallery 💖</h1>
+
+    <p class="shayari">
+      "In every smile, in every tear,<br>
+      In every heartbeat, I feel you near.<br>
+      These pictures aren't just memories,<br>
+      They're pieces of a love story written just for you. 💖"
+    </p>
+
+    <div class="circle-images">
+      <img src="assest/photo1.jpg" class="circle" />
+      <img src="assest/photo2.jpg" class="circle" />
+      <img src="assest/photo3.jpg" class="circle" />
+      <img src="assest/photo4.jpg" class="circle" />
+      <!-- Add more if needed -->
+    </div>
+
+    <button class="love-btn" onclick="goToLove()">❤️ Love ❤️</button>
+  </div>
+
+  <!-- Floating hearts -->
+  <script>
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+      heart.style.opacity = Math.random();
+      heart.style.background = ['#ff4d6d', '#ff6699', '#ff1a75'][Math.floor(Math.random() * 3)];
+      document.body.appendChild(heart);
+    }
+
+    function goToLove() {
+      window.location.href = "love.html";
+    }
+  </script>
+
+</body>
+</html>

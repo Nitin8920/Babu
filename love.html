@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Love ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffb6c1, #ffe4e1, #fff0f5);
+      overflow: hidden;
+      text-align: center;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 80px;
+      color: #fff;
+      text-shadow: 2px 2px 5px #ff69b4;
+    }
+
+    .options {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .option {
+      padding: 20px 40px;
+      font-size: 18px;
+      background: #ff69b4;
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 0 15px #ff1493;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s ease;
+    }
+
+    .option:hover {
+      background: #ff1493;
+      transform: scale(1.1);
+    }
+
+    .shayari {
+      margin-top: 60px;
+      font-size: 1.3rem;
+      color: #d63384;
+      font-weight: bold;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+      padding: 0 20px;
+      text-shadow: 1px 1px 3px #fff;
+    }
+
+    /* Floating hearts animation */
+    .heart {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatHearts 10s linear infinite;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart:before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        bottom: -50px;
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        bottom: 100%;
+        left: calc(100vw * 0.5);
+        opacity: 0;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+        margin-top: 60px;
+      }
+
+      .option {
+        font-size: 16px;
+        padding: 15px 30px;
+      }
+
+      .shayari {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome My Love ❤️</h1>
+
+  <div class="options">
+    <a href="snap.html" class="option" target="_blank">📸 Snap</a>
+    <a href="photo.html" class="option" target="_blank">🖼️ Photo</a>
+    <a href="video.html" class="option" target="_blank">🎥 Video</a>
+  </div>
+
+  <div class="shayari">
+    💕  
+
+
+    Without you, my every word feels incomplete,<br>
+    You're my smile, my heartbeat so sweet.<br>
+    In every prayer, I whisper your name,<br>
+    My heart speaks love, always the same.  
+    💕
+  </div>
+
+  <!-- Floating Hearts Animation -->
+  <script>
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+      heart.style.opacity = Math.random();
+      heart.style.transform = `scale(${Math.random()}) rotate(45deg)`;
+      heart.style.background = ['#ff4d6d', '#ff6699', '#ff1a75'][Math.floor(Math.random() * 3)];
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
